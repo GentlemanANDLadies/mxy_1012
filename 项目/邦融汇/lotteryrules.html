@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>邦融汇</title>
+<link rel="stylesheet" href="./css/resetMobile.css">
+<link rel="stylesheet" href="./css/swiper.min.css">
+<link rel="stylesheet" href="./css/animate.min.css">
+<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- 第一页 -->
+				<div class="swiper-slide" style="width: 100%;height: 100%;background:url(./images/title9.png);background-size: 100% 100%;">
+					<img class="stars1 ani infinite" src="./images/str3.png" alt="" swiper-animate-effect=" flash" swiper-animate-duration="1s" swiper-animate-delay="1s">
+					<a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3MzI1MzM3OA==&scene=124#wechat_redirect）"><img class="ani agin  infinite " src="./images/agin.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay=".7s"></a>
+					<a href="###" class="click"><img class="ani Fx  infinite" src="./images/Fx.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></a>
+					<div class="none">
+						<img  class="img_bj" src="images/none.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+</body>
+	<script src="js/common.js"></script>
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/swiper.animate.min.js"></script>
+	<script>
+		$(function(){
+			var mySwiper = new Swiper ('.swiper-container', {
+				direction : 'vertical',
+				pagination: '.swiper-pagination',
+				mousewheelControl : true,
+				onInit: function(swiper){ // Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); // 隐藏动画元素
+					swiperAnimate(swiper); // 初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper){
+					swiperAnimate(swiper); // 每个slide切换结束时也运行当前slide动画
+					
+				}
+			})
+
+				$('.click').click(function(){
+				$('.none').css('display','block')
+				})
+				$('.none').click(function(){
+					$('.none').css('display','none')
+				})	
+
+		})
+
+
+		</script>
+</html>

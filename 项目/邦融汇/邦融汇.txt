@@ -1,0 +1,41 @@
+﻿
+
+index.html         首页
+
+RuleOne.html       大富翁规则 ok
+
+Monopolygame.html        大富翁游戏
+
+Challengefailure.html    大富翁未挑战成功  再试一次跳到大富翁游戏
+
+ClickSuccess.html        大富翁挑战成功
+
+
+turntable.html      大转盘
+
+RuleTwo.html        大转盘规则2
+
+Notwinning.html      大转盘未挑战成功
+
+lotteryrules.html  ´ 关注平台
+
+
+
+getJp1000.html      恭喜您获得1000元购物卡
+
+getJp10.html      恭喜您获得10元流量券
+
+getJp50.html      恭喜您获得50元购物卡
+
+
+
+ContactInformation10.html  获得10元+联系方式
+
+ContactInformation1000.html  获得1000元+联系方式
+
+ContactInformation50.html  获得50元+联系方式
+
+Record.html       中奖记录
+
+
+

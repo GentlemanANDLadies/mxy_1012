@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>翻翻看</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimal-ui" />
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+</head>
+
+<body style="background:##FFD302;">
+    <div class="game">
+        <div id="js-gameready" class="page page-gameready" style="background:url(./assets/img/begin.jpg);background-size:100%;">
+            <div class="hd" style="display:none;">
+                <div class="logo"></div>
+            </div>
+            <button id="js-btn-start" class="btn-start">开始</button>
+        </div>
+        <div id="js-gamein" class="page page-gamein" style="background:#FFD302">
+            <div class="hd meta clearfix">
+                <div class="item-score">
+                    <i class="icon-score"></i>
+                    <span id="js-score" class="score">0</span>
+                </div>
+                <div class="item-time">
+                    <i class="icon-time"></i>
+                    <span id="js-time" class="time">01:00</span>
+                </div>
+                <div id="js-grids" class="grids">
+                    <ul class="list">
+                        <li class="item-card" data-type="1">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                        <li class="item-card" data-type="2">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                        <li class="item-card" data-type="2">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                        <li class="item-card" data-type="1">
+                            <div class="cardback"></div>
+                            <div class="cardfront"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="js-gameover" class="page page-gameover" style="display:none;">
+            <div class="inner">
+                <p class="item-score">恭喜您获得<span id="js-gameover-score" class="score">60</span>分
+                    <br />击败了全国<span class="percent"><em id="js-gameover-percent" class="x-percent">96</em>%</span>的人</p>
+                <a href="#" id="js-btn-more" class="btn btn-more">查看奖励</a>
+            </div>
+        </div>
+        <!--结果1-->
+        <div class="page page-gameover1" style="background-repeat: no-repeat;">
+            <div class="inner1">
+                <p class="item-score1">成功整盅到<span class="renwu1"></span>
+                    <br />成为<span class="dengji1"></span>小霸王</p>
+                <p id="show1" style="display:none;font-size:12px;text-align:center;">若将此截图发送到【统帅冰箱】公众号后台将有机会获得火锅英雄电影票一张，记得留下手机号和住址哦！</p>
+                <button id="js-btn-again" class="btn1 btn-again">再玩一次</button>
+                <a href="#" id="fenxiang" class="btn1" style="background:none;width:98%;border:2px solid #1098D5;color:#1098D5;">炫耀一下</a>
+            </div>
+            <i class="share-tips1"></i>
+        </div>
+        <!--结果1 end-->
+        <div id="js-timeout" class="page page-timeout">
+            <div class="text">
+                时间到
+            </div>
+        </div>
+        <div id="js-loading" class="page page-loading">
+            <div class="loading-text">
+                正在加载...（
+                <span id="js-percent">1</span>%）
+            </div>
+        </div>
+    </div>
+    <!--音乐-->
+    <img class="asdf" src="./assets/img/sta.png">
+    <audio autoplay id="music-mu" src="./assets/img/mc.mp3"></audio>
+    <!--音乐 end-->
+    <script src="assets/vendor/libs.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+    <script src="jquery-1.8.3.min.js"></script>
+    <script>
+        $(function() {
+            $("#js-btn-more").click(function() {
+                var score = $("#js-gameover-score").text();
+                if (score < 4) {
+                    $("#js-gameover").hide();
+                    $(".page-gameover1").css({
+                        "background": "url(./assets/img/error.jpg)",
+                        "background-size": "100%"
+                    })
+                    $(".page-gameover1").show();
+                    $(".share-tips1").hide();
+                    $(".item-score1").hide();
+                    $(".inner1").css("top", "80%")
+                } else if (score < 20 && score >= 4) {
+                    $(".renwu1").text("同学");
+                    $(".dengji1").text("班级");
+                    $("#js-gameover").hide();
+                    $(".page-gameover1").css({
+                        "background": "url(./assets/img/banji.jpg)",
+                        "background-size": "100%"
+                    })
+                    $(".page-gameover1").show();
+                    $(".share-tips1").addClass("shake");
+                    var set = setTimeout(function() {
+                        $(".share-tips1").removeClass("shake");
+                    }, 1500)
+                } else if (score < 36 && score >= 20) {
+                    $(".renwu1").text("老师");
+                    $(".dengji1").text("年级");
+                    $("#js-gameover").hide();
+                    $(".page-gameover1").css({
+                        "background": "url(./assets/img/nianji.jpg)",
+                        "background-size": "100%"
+                    })
+                    $(".page-gameover1").show();
+                    $(".share-tips1").addClass("shake");
+                    var set = setTimeout(function() {
+                        $(".share-tips1").removeClass("shake");
+                    }, 1500)
+                } else if (score < 52 && score >= 36) {
+                    $(".renwu1").text("校长");
+                    $(".dengji1").text("校园");
+                    $("#js-gameover").hide();
+                    $(".page-gameover1").css({
+                        "background": "url(./assets/img/xiaoyuan.jpg)",
+                        "background-size": "100%"
+                    })
+                    $(".page-gameover1").show();
+                    $(".share-tips1").addClass("shake");
+                    var set = setTimeout(function() {
+                        $(".share-tips1").removeClass("shake");
+                    }, 1500)
+                } else {
+                    $(".item-score1").html("成功整盅到<span class='renwu1'>校花</span><br />获得<span class='dengji1'>终极小霸王</span>称号");
+                    $("#js-gameover").hide();
+                    $(".share-tips1").hide();
+                    $(".page-gameover1").show();
+                    $(".page-gameover1").css({
+                        "background": "url(./assets/img/xiaohua.jpg)",
+                        "background-size": "100%"
+                    })
+                    $("#show1").show();
+                    $(".inner1").css("top", "48%")
+                    $(".item-score1").css("margin-bottom", "0px")
+                    $(".item-score1").css("font-size", "1.6em")
+                        //alert("若将此截图发送到【统帅冰箱】公众号后台将有机会获得火锅英雄电影票两张，记得留下手机号和住址哦！")
+                }
+                //糖果弹出
+                $(".share-tips1").click(function() {
+                    if (score < 20 && score >= 4) {
+                        alert("如果最终成功整蛊到校花，将获得终极小霸王称号和整蛊糖果一份，骚年再整一次吧！")
+                    } else if (score < 36 && score >= 20) {
+                        alert("你已经成功整蛊到老师。如果最终成功整蛊到校花，将获得终极小霸王称号和整蛊糖果一份，骚年再整一次吧！")
+                    } else if (score < 52 && score >= 36) {
+                        alert("整蛊到校长啦，离成功只有一步之遥！如果最终成功整蛊到校花，将获得终极小霸王称号和整蛊糖果一份，骚年再整一次吧！")
+                    } else {
+                        alert("网络超时")
+                    }
+                })
+            });
+            //音乐开关
+            $(".asdf").click(function() {
+                    var autio = document.getElementById("music-mu");
+                    if (autio.paused) {
+                        autio.play();
+                        $(".asdf").attr("src", "./assets/img/sta.png")
+                    } else {
+                        autio.pause();
+                        $(".asdf").attr("src", "./assets/img/sto.png")
+                    }
+                })
+                //分享
+            var Off = true;
+            $("#fenxiang").click(function(event) {
+                event.stopPropagation();
+                $(".item-score1").hide();
+                $("#fenxiang").hide();
+                $(".btn-again").hide();
+                $(".share-tips1").hide();
+                $(".page-gameover1").css({
+                    "background": "url(./assets/img/fenxiang.png)",
+                    "background-size": "100%"
+                });
+                $(".page-gameover1").click(function() {
+                    location.reload();
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

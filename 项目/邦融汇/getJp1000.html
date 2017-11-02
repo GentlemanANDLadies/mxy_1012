@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>邦融汇</title>
+<link rel="stylesheet" href="./css/resetMobile.css">
+<link rel="stylesheet" href="./css/swiper.min.css">
+<link rel="stylesheet" href="./css/animate.min.css">
+<link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- 第一页 -->
+				<div class="swiper-slide" style="width: 100%;height: 100%;background:url(./images/bangrh1.png);background-size: 100% 100%;">
+					<!-- 获得1000元购物卡 -->
+					<img class="stars1 ani infinite" src="./images/title10.png" alt="" >
+
+					<img class="stars1 ani infinite" src="./images/str6.png" alt="" swiper-animate-effect=" flash" swiper-animate-duration="1s" swiper-animate-delay="1s">
+					<!-- 立即领取 -->
+					<a href="ContactInformation1000.html"><img class="ani  Bth aginLq  infinite" src="./images/aginLq.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></a>
+				</div>
+			</div>
+		</div>
+
+
+</body>
+	<script src="js/common.js"></script>
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/swiper.animate.min.js"></script>
+	<script>
+		$(function(){
+			var mySwiper = new Swiper ('.swiper-container', {
+				direction : 'vertical',
+				pagination: '.swiper-pagination',
+				mousewheelControl : true,
+				onInit: function(swiper){ // Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); // 隐藏动画元素
+					swiperAnimate(swiper); // 初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper){
+					swiperAnimate(swiper); // 每个slide切换结束时也运行当前slide动画
+					
+				}
+			})
+
+		})
+
+
+		</script>
+</html>

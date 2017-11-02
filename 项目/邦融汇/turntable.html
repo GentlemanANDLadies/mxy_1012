@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>邦融汇-- 幸运大转盘</title>
+<link rel="stylesheet" href="./css/resetMobile.css">
+<link rel="stylesheet" href="./css/swiper.min.css">
+<link rel="stylesheet" href="./css/animate.min.css">
+<link rel="stylesheet" href="./css/index.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jQueryRotate.js"></script>
+	<script src="js/turntable.js"></script>
+</head>
+
+<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- 第一页 -->
+				<div class="swiper-slide" style="width: 100%;height: 100%;background:url(./images/bangrh3.png);background-size: 100% 100%;">
+					<img class="stars1 ani" src="./images/title6.png" alt="" swiper-animate-effect=" rollIn" swiper-animate-duration="1.2s" swiper-animate-delay="0.3s">
+					<img class="stars1 ani infinite" src="./images/str6.png" alt="" swiper-animate-effect=" flash" swiper-animate-duration="1s" swiper-animate-delay="1.4s">
+					<a href="RuleTwo.html"><img class="ani Bth Bthdwl  infinite  fl" src="./images/prizeGf.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="1.5s"></a>
+					<a href="Record.html"><img class="ani Bth Bthdwr  infinite fr" src="./images/record.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></a>
+					<!-- 转盘 -->
+					<div class="turntable wheel">
+						<canvas class="item" id="wheelCanvas"width="422px" height="422px" ></canvas>
+						<img class="pointer" src="images/Pointer.png" />
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+</body>
+
+
+	<script src="js/jQueryRotate.js"></script>
+	<script src="js/turntable.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/swiper.animate.min.js"></script>
+	
+
+	<script>
+		$(function(){
+			 
+			var mySwiper = new Swiper ('.swiper-container', {
+				direction : 'vertical',
+				pagination: '.swiper-pagination',
+				mousewheelControl : true,
+				onInit: function(swiper){ // Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); // 隐藏动画元素
+					swiperAnimate(swiper); // 初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper){
+					swiperAnimate(swiper); // 每个slide切换结束时也运行当前slide动画
+					
+				}
+
+			})
+
+		})
+
+        var $mc = {
+        	getQueryString:function(name){
+		       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		        var r = window.location.search.substr(1).match(reg); 
+		        if (r != null) return unescape(r[2]); return null; 
+		    },
+        }
+		</script>
+</html>

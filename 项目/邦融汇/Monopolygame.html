@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+	<meta name="screen-orientation" content="portrait">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+    <title>邦融汇</title>
+    <link rel="stylesheet" type="text/css" href="static/css/indexs.css">
+    <link rel="stylesheet" href="css/resetMobile.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/index.css">
+    <script src="http://s0.qhimg.com/!249ce048/WeixinApi.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/zepto.min.js"></script>
+</head>
+<body>
+<div id="container">
+	<audio src="static/music/bg.mp3" autoplay=""></audio>
+	<div id="guidePanel"></div>
+	<div id="gamepanel">
+		<div class="score-wrap">
+           <!-- <div class="heart"></div>-->
+            <span id="score">0</span>
+        </div>
+        <div class="score-wrap">
+        	<!--<div class="heart"></div>-->
+        	<span id="time">60</span>
+        </div>
+		<canvas id="stage"></canvas>
+	</div>
+<!--	<div id="gameoverPanel"></div>-->
+	<!--<div id="resultPanel">
+        <div class="weixin-share"></div>
+        <a href="javascript:void(0)" class="replay"></a>
+        <div id="fenghao"></div>
+        <div id="scorecontent">
+        	您抢到了<span id="sscore" class="lighttext">21341</span>个月饼<br>超过了<span id="suser" class="lighttext">31%</span>的用户！
+        </div>
+        <div class="textc">
+        	<span class="btn1 share">兑换流量</span>
+        </div>
+	</div>-->
+	<!--游戏失败-->
+	<div class="swiper-container" id="resultPanel">
+			<div class="swiper-wrapper">
+				<!-- 第一页 -->
+				<div class="swiper-slide swiper-no-swiping" style="width: 100%;height: 100%;background:url(./images/bangrh2.png);background-size: 100% 100%;">
+					<img class="stars1 ani" src="./images/title4.png" alt="" swiper-animate-effect=" rollIn" swiper-animate-duration="1.2s" swiper-animate-delay="0.3s">
+					<img class="stars1 ani infinite" src="./images/str3.png" alt="" swiper-animate-effect=" flash" swiper-animate-duration="1s" swiper-animate-delay="1.4s">
+					<span><img class="ani  Bth  Bthcs  infinite  replay" src="./images/Bthcs.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="1.4s"></span>
+					<!-- 老用户直接跳转抽奖页面 新用户先关注在跳转 -->
+					<a href="turntable.html"><img class="ani  Bth  BthGz  infinite " src="./images/BthGz.png" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1s" swiper-animate-delay="1.4s"></a>
+				</div>
+			</div>
+	</div>
+	<!--游戏失败-->
+</div>
+<script src="static/js/index.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+<script>
+	$(function(){
+		var mySwiper = new Swiper ('.swiper-container', {
+			direction : 'vertical',
+			pagination: '.swiper-pagination',
+			mousewheelControl : true,
+			onInit: function(swiper){ // Swiper2.x的初始化是onFirstInit
+				swiperAnimateCache(swiper); // 隐藏动画元素
+				swiperAnimate(swiper); // 初始化完成开始动画
+			},
+			onSlideChangeEnd: function(swiper){
+				swiperAnimate(swiper); // 每个slide切换结束时也运行当前slide动画
+				
+			}
+		})
+
+	})
+	</script>
+</body>
+</html>

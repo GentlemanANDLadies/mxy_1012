@@ -1,0 +1,237 @@
+/*************一、CSS样式重置代码********************/
+
+html,body {
+  margin: 0 auto!important;
+  background: #fff;
+  position: relative;
+}
+html { font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 62.5%;}
+body { margin: 0; font-size: 1.4rem; line-height: 1.5; color: #333333; background-color: white; height: 100%; overflow-x: hidden; -webkit-overflow-scrolling: touch;}
+a,abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video {
+  border: 0 none;
+  font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+article,aside,dialog,figure,footer,header,nav,section {
+  display: block;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+  font-style: normal;
+  font-weight: normal;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+fieldset,img {
+  border: 0 none;
+}
+li {
+  list-style: none;
+}
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table,th,td {
+  vertical-align: middle;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+button,input,textarea,select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  vertical-align: middle;
+  outline: none;
+}
+input{
+    white-space:nowrap;
+}
+input[type="text"]{
+  -webkit-appearance: none;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow:00 0px 1000px #fffinset;
+}
+*{
+    background-repeat:no-repeat;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+ol,ul,li {
+  list-style: none;
+}
+img{
+    border:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    border: 0;
+    vertical-align: middle;
+}
+blockquote,q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a,button {
+  cursor: pointer;
+}
+/* 对齐是排版最重要的因素, 别让什么都居中 */ 
+caption,th { 
+text-align:left; 
+} 
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */ 
+h1,h2,h3,h4,h5,h6 { 
+font-size:100%; 
+font-weight:500; 
+} 
+q:before,q:after { 
+content:''; 
+} 
+/* 统一上标和下标 */ 
+sub, sup { 
+font-size:75%; 
+line-height:0; 
+position:relative; 
+vertical-align:baseline; 
+} 
+sup { 
+top:-0.5em; 
+} 
+sub { 
+bottom:-0.25em; 
+}
+a{
+    text-decoration:none;
+    border:none;
+    outline:none;
+    tap-highlight-color: rgba(0,0,0,0);
+    focus-ring-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-focus-ring-color: rgba(0,0,0,0);
+    -moz-tap-highlight-color: rgba(0,0,0,0);
+    -moz-focus-ring-color: rgba(0,0,0,0);
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+/* 让链接在四中状态下不显示下划线 */ 
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}
+/* 默认不显示下划线，保持页面简洁 */ 
+ins,a { 
+text-decoration:none; 
+} 
+/* IE6,7焦点点状线去除 */ 
+a:focus,*:focus { 
+outline:none; 
+} 
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/**************CSS样式重置代码结束*******************/
+
+
+
+/**********二、CSS公用样式（预定义样式）代码开始*****/
+
+.show {
+  display:block !important; 
+}
+.hide {
+  display: none !important;
+  visibility:hidden; 
+}
+.fl {
+  float: left;
+  display:inline; 
+}
+.fr {
+  float: right;
+  display:inline; 
+}
+.ct{
+  margin: 0 auto;
+}
+.strong {
+  font-weight: bold;
+}
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+/* 清除浮动 */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  overflow: hidden;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clear{ 
+clear:both; 
+display:block; 
+overflow:hidden; 
+height:0; 
+line-height:0; 
+font-size:0; 
+} 
+
+/************CSS公用（预定义）样式代码结束***********/
+
+
+
+/******三、本项目页面中公用（预定义）样式开始********/
+html,body{width: 100%; height: 100%; background: #fff; font-family: "microsoft yahei";}
+img{display: block;}
+.swiper-container{width: 100%; height: 100%; position: relative;}
+.swiper-slide{width: 100%; height: 100%; position: relative;}
+.swiper-pagination-bullet{width: 0.09375rem; height: 0.09375rem; background: #fff; opacity: 0.4;}
+.swiper-pagination-bullet-active{opacity: 1;}
+.swiper-pagination{opacity: 0;}
+.ani,.txt{position: absolute;}
+#array{width: 0.640625rem; height: 0.578125rem; bottom: 0; left: 4.671875rem; position: absolute; z-index: 999; animation: tipmove 1.5s infinite ease-in-out;}
+@-webkit-keyframes tipmove{
+  0%{bottom:10px;opacity:0}
+  50%{bottom:15px;opacity:1}
+  100%{bottom:20px;opacity:0}
+}
+.playIco{width: 0.5rem; height: 0.5rem; background: url(../images/ico_music.png) no-repeat center center; background-size: cover; position: absolute; bottom: 0.35rem; right: 0.25rem; z-index: 699996;}
+@keyframes play{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.xuanzhuan{
+    animation: play 10s linear infinite;
+}
